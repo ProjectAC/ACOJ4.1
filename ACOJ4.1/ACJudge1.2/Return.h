@@ -4,7 +4,7 @@ namespace ACJudge
 {
 	enum class Return
 	{
-		OK, ERROR, TLE, MLE
+		OK, FAIL, TLE, MLE
 	};
 
 	enum class Result

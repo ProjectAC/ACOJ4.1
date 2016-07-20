@@ -1,6 +1,6 @@
 #pragma once
 
-enum Language
+enum class Language
 {
 	CPP, CPP11, C, PASCAL, PYTHON
 };

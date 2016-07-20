@@ -12,7 +12,6 @@ namespace ACJudge
 	{
 	private:
 		Text name;
-		SandBox box;
 		
 	protected:
 		Grades JudgeCode(const Task &t, const Submission &s);

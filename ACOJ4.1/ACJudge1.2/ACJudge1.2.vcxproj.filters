@@ -74,5 +74,8 @@
     <ClCompile Include="Task.cpp">
       <Filter>源文件\type</Filter>
     </ClCompile>
+    <ClCompile Include="Sandbox.cpp">
+      <Filter>源文件\judge</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

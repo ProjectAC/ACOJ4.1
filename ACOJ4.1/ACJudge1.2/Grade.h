@@ -7,10 +7,11 @@ namespace ACJudge
 	class Grade
 	{
 	private:
-		ID sid;
-		ID did;
-		Score score;
-		Result result;
+		ID sid;  //提交号
+		ID did;  //数据号
+		Score score;  //打分
+		Result result;  //单点评测结果
+		Text msg;  //返回错误信息
 
 	public:
 		Grade(Result r, Score s, ID si, ID di)
@@ -20,7 +21,11 @@ namespace ACJudge
 	class Grades
 	{
 		Array<Grade> grades;
-		Result s;
+		Result result;
 		ID sid;
+
+	public:
+		void SetResult(Result);
+		void Push(Grade);
 	};
 }
