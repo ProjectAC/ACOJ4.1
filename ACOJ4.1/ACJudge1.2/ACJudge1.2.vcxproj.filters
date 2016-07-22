@@ -28,6 +28,12 @@
     <Filter Include="源文件\type">
       <UniqueIdentifier>{f3d2ecd3-5fff-4e34-b264-247a2f165606}</UniqueIdentifier>
     </Filter>
+    <Filter Include="头文件\interface">
+      <UniqueIdentifier>{4c2becf5-a85f-4683-9cbb-aa65bc0d74b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\interface">
+      <UniqueIdentifier>{76027301-898b-4433-a18f-355a9e0740ac}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Task.h">
@@ -66,6 +72,12 @@
     <ClInclude Include="SandBox.h">
       <Filter>头文件\judge</Filter>
     </ClInclude>
+    <ClInclude Include="Answer.h">
+      <Filter>头文件\type</Filter>
+    </ClInclude>
+    <ClInclude Include="Database.h">
+      <Filter>头文件\interface</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Judge.cpp">
@@ -76,6 +88,24 @@
     </ClCompile>
     <ClCompile Include="Sandbox.cpp">
       <Filter>源文件\judge</Filter>
+    </ClCompile>
+    <ClCompile Include="Data.cpp">
+      <Filter>源文件\type</Filter>
+    </ClCompile>
+    <ClCompile Include="Answer.cpp">
+      <Filter>源文件\type</Filter>
+    </ClCompile>
+    <ClCompile Include="Submission.cpp">
+      <Filter>源文件\type</Filter>
+    </ClCompile>
+    <ClCompile Include="Code.cpp">
+      <Filter>源文件\type</Filter>
+    </ClCompile>
+    <ClCompile Include="Database.cpp">
+      <Filter>源文件\interface</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

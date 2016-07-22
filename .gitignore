@@ -243,3 +243,5 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/ACOJ4.1/ACJudge1.2/header
+/ACOJ4.1/ACJudge1.2/lib

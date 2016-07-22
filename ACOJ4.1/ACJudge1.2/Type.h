@@ -1,6 +1,5 @@
 #pragma once
 
-#include "SandBoxType.h"
 #include "Language.h"
 #include "TaskType.h"
 #include "Return.h"
@@ -20,7 +19,11 @@ namespace ACJudge
 
 #if defined _UNICODE
 	typedef std::wstring Text;
+	typedef std::wifstream Input;
+	typedef std::wofstream Output;
 #else
 	typedef std::string Text;
+	typedef std::ifstream Input;
+	typedef std::ofstream Output;
 #endif
 }

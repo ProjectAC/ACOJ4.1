@@ -85,7 +85,7 @@ STARTUPINFO SandBox::StartUpInfo(Text input, Text output, Text error)
 	return s;
 }
 
-Return SandBox::Run(Text name, int &val, Limit time = -1, Limit space = -1, Text error, Text input, Text output)
+Return SandBox::Run(Text name, int &val, Limit time, Limit space, Text error, Text input, Text output)
 {
 #if defined WINDOWS
 	//初始化
@@ -99,9 +99,9 @@ Return SandBox::Run(Text name, int &val, Limit time = -1, Limit space = -1, Text
 	SetInformationJobObject(job, JobObjectExtendedLimitInformation, &ex_lim, sizeof(ex_lim));
 	SetInformationJobObject(job, JobObjectBasicUIRestrictions, &bs_ui, sizeof(bs_ui));
 
-	TCHAR *str = new TCHAR(10000);
+	TCHAR *str = new TCHAR[10000];
 	_tcscpy(str, name.c_str());
-
+	
 	//创建进程
 
 	DWORD ret =

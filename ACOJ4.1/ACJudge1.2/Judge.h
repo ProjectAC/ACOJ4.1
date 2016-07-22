@@ -5,6 +5,7 @@
 #include "Task.h"
 #include "Grade.h"
 #include "Submission.h"
+#include "Database.h"
 
 namespace ACJudge
 {
@@ -15,9 +16,10 @@ namespace ACJudge
 		
 	protected:
 		Grades JudgeCode(const Task &t, const Submission &s);
-		Grades JudgeAnswer();
+		//Grades JudgeAnswer();
 
 	public:
-		void Start(const Task &t, const Submission &s);
+		Grades Judges(const Task &t, const Submission &s);
+		Judge(Text n) { name = n; }
 	};
 }

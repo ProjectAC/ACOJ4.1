@@ -2,5 +2,5 @@
 
 enum class Language
 {
-	CPP, CPP11, C, PASCAL, PYTHON
+	CPP, CPP11, C, PASCAL, DMSL, PYTHON
 };

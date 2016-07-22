@@ -6,7 +6,6 @@ using namespace ACJudge;
 
 Grades Judge::JudgeCode(const Task &t, const Submission &s)
 {
-	SandBox box;
 	Grades res;
 	Return ret;
 	int val;
@@ -44,7 +43,7 @@ Grades Judge::JudgeCode(const Task &t, const Submission &s)
 		i->Prepare(_T("data"));
 
 		//ÔËĞĞ
-		Return ret = box.Run(_T("sol.exe"), val, i->GetTime(), i->GetSpace(), _T("err"), _T("data.in"), _T("data.out"));
+		Return ret = s.GetCode().Run(_T("sol"), val, i->GetTime(), i->GetSpace(), _T("err"), _T("data.in"), _T("data.out"));
 		switch (ret)
 		{
 		case Return::TLE:
@@ -58,11 +57,21 @@ Grades Judge::JudgeCode(const Task &t, const Submission &s)
 			break;
 		default:
 			//ÆÀ²â
-			Return ret = box.Run(_T("spj.exe data.in data.out sol.out"), val);
-			res.Push(Grade(val == i->GetScore() ? Result::AC : Result::WA, val, s.GetID, i->GetID));
+			Return ret = t.GetCode().Run(_T("spj"), val, 5000);
+			res.Push(Grade((val == i->GetScore() ? Result::AC : Result::WA), val, s.GetID(), i->GetID()));
 		}
 	}
 
 	res.SetResult(Result::AC);
+	return res;
+}
+
+Grades Judge::Judges(const Task &t, const Submission &s)
+{
+	Grades res;
+
+	if (t.GetType() == TaskType::OI)
+		res = JudgeCode(t, s);
+
 	return res;
 }
