@@ -2,12 +2,16 @@
 #include "Judge.h"
 #include <thread>
 #include <mutex>
+#include <utility>
+#include <chrono>
+#include <functional>
+#include <atomic>
 #include <iostream>
 
 using namespace std;
 using namespace ACJudge;
 
-void action(mutex &m, Database &db, Text n, int cnt)
+void action(mutex &m, Database &db, Text n)
 {
 	Judge judge(n);
 	Task t;
@@ -28,11 +32,11 @@ void action(mutex &m, Database &db, Text n, int cnt)
 void start()
 {
 	Database db;
-	int cnt;
+	mutex m;
 
-	thread t1(action, db, _T("Œ∫‰Ï≥–"), cnt);
+	thread t1(action, ref(m), ref(db), _T("Œ∫‰Ï≥–"));
 	t1.join();
-	thread t2(action, db, _T("Œ∫‰Ïº≈"), cnt);
+	thread t2(action, ref(m), ref(db), _T("Œ∫‰Ïº≈"));
 	t2.join();
 }
 

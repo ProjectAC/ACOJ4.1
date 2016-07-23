@@ -16,7 +16,8 @@ namespace ACJudge
 
 	public:
 		Return Prepare() const;
-		Task();
+		Task(ID t, TaskType ty, Array<Data> d, Code s) : tid(t), type(ty), data(d), spj(s) {}
+		Task() {}
 
 		const Array<Data>& GetData() const { return data; }
 		const Code& GetCode() const { return spj; }

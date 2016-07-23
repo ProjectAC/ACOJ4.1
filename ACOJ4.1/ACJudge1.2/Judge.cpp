@@ -40,7 +40,7 @@ Grades Judge::JudgeCode(const Task &t, const Submission &s)
 	for (auto i = standard.begin(); i != standard.end(); i++)
 	{
 		//放置数据
-		i->Prepare(_T("data"));
+		i->Prepare();
 
 		//运行
 		Return ret = s.GetCode().Run(_T("sol"), val, i->GetTime(), i->GetSpace(), _T("err"), _T("data.in"), _T("data.out"));

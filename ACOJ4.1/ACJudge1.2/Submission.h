@@ -16,7 +16,8 @@ namespace ACJudge
 		Code code;  //非提交答案：代码
 
 	public:
-
+		Submission(ID s, ID t, Array<Answer> d, Code c) : sid(s), tid(t), data(d), code(c) {}
+		Submission() {}
 		Return Prepare() const;  //准备选手代码或答案
 
 		const Array<Answer>& GetData() const { return data; }
